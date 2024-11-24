@@ -9,6 +9,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name = "atendimento")
 public class Atendimento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

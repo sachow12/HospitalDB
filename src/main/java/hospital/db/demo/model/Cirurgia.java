@@ -8,6 +8,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name = "cirurgia")
 public class Cirurgia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
