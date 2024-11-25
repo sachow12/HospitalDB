@@ -1,7 +1,7 @@
 package hospital.db.demo.model;
+
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.util.Date;
 
 @Getter
@@ -13,24 +13,22 @@ import java.util.Date;
 public class Internacao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_internacao")
     private Integer id;
-
     @Temporal(TemporalType.TIMESTAMP)
-    private Date dataAlta;
-
-    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "data_internacao")
     private Date dataInternacao;
-
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "data_alta")
+    private Date dataAlta;
+    @Column(name = "motivo")
     private String motivo;
-
     @ManyToOne
-    @JoinColumn(name = "id_leito")
+    @JoinColumn(name = "leito_id")
     private Leito leito;
-
     @ManyToOne
     @JoinColumn(name = "id_paciente")
     private Paciente paciente;
-
     @ManyToOne
     @JoinColumn(name = "id_enfermeira")
     private Enfermeira enfermeira;

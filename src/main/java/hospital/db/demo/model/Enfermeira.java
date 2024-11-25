@@ -14,12 +14,17 @@ import java.util.List;
 public class Enfermeira {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_enfermeira")
     private Integer id;
-
     @ManyToOne
     @JoinColumn(name = "id_paciente")
     private Paciente paciente;
-
-    @OneToMany(mappedBy = "enfermeira", cascade = CascadeType.ALL)
-    private List<Internacao> internacoes;
+    @OneToMany(mappedBy = "enfermeira")
+    private List<Medicamento> medicamentosEnfermeira;
+    @Column(name = "nome")
+    private String nome;
+    @Column(name = "cpf")
+    private String cpf;
+    @Column(name = "cip")
+    private String cip;
 }
