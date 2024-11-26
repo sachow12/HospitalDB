@@ -28,6 +28,6 @@ public class Medicamento {
     @JoinColumn(name = "atendimento_id")
     private Atendimento atendimento;
     @ManyToOne
-    @JoinColumn(name = "id_enfermeira")  // Chave estrangeira referenciando Enfermeira
+    @JoinColumn(name = "id_enfermeira")
     private Enfermeira enfermeira;
 }
